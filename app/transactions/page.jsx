@@ -1,3 +1,6 @@
+'use client';
+import React, {useState} from 'react';
+
 const mockTransactions = [
   {
     id: '1',
@@ -28,9 +31,26 @@ const mockTransactions = [
 
 
 export default function TransactionsPage() {
+
+    const [filter, setFilter] = useState('All');
+
+    const filteredTransactions = 
+    filter === 'All'
+        ? mockTransactions
+        : mockTransactions.filter(transactions => transactions.transactionType === filter);
+
   return (
     <main className="p-6">
       <h1 className="text-2xl font-bold mb-4">Transactions</h1>
+      <div className="mb-4 space-x-2">
+        {['All', 'Stake', 'Borrow', 'Lend'].map((type) => (
+            <button key={type} onClick ={() => setFilter(type)} className={`px-4 py-2 rounded border ${
+              filter === type ? 'bg-blue-600 text-white' : 'bg-gray-200'
+            }`}>
+                {type}
+            </button>
+        ))}
+      </div>
       <table className="min-w-full border border-gray-300">
         <thead>
           <tr className="bg-gray-100">
