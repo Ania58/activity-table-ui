@@ -62,7 +62,7 @@ export default function TransactionsPage() {
           </tr>
         </thead>
         <tbody>
-            {mockTransactions.map((transaction, index) => (
+            {filteredTransactions.map((transaction, index) => (
                 <tr key={transaction.id} className={index % 2 === 0 ? 'bg-white' : 'bg-gray-50'}>
                     <td className="p-2 border-b">{transaction.username}</td>
                     <td className="p-2 border-b">{transaction.transactionType}</td>
