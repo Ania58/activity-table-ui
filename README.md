@@ -33,7 +33,7 @@ npm run dev
 Visit http://localhost:3000/transactions in your browser.
 
 ## 🧾 Demo
-🎥 Click here for the video walkthrough:
+🎥 Click here for the video walkthrough: https://www.veed.io/view/f9ec52f7-2331-4e68-8438-fc0188a1a033?panel=share
 
 ## 📁 Project Structure
 
