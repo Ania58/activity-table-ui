@@ -41,6 +41,17 @@ export default function TransactionsPage() {
             <th className="p-2 border-b">Date</th>
           </tr>
         </thead>
+        <tbody>
+            {mockTransactions.map((transaction, index) => (
+                <tr key={transaction.id} className={index % 2 === 0 ? 'bg-white' : 'bg-gray-50'}>
+                    <td className="p-2 border-b">{transaction.username}</td>
+                    <td className="p-2 border-b">{transaction.transactionType}</td>
+                    <td className="p-2 border-b">{transaction.token}</td>
+                    <td className="p-2 border-b">{transaction.amount}</td>
+                    <td className="p-2 border-b">{transaction.date}</td>
+                </tr>
+            ))}
+        </tbody>
       </table>
     </main>
   );
